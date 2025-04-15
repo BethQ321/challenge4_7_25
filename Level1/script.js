@@ -10,14 +10,6 @@ const target2 = 178;
 const target3 = 1450;  
 const target4 = 3000;
 
-// TEST CASES: check console logs with answers here
-// targetNumber(arr1, target1) should return 0
-// targetNumber(arr1, target2) should return 3
-// targetNumber(arr2, target3) should return 2
-// targetNumber(arr4, target4) should return -1
-// targetNumber(arr3, target4) should return 6
-// targetNumber(arr1, target3) should return -1
-
 // function should take in an array of numbers representing people entering a park per day
 // function also receives a target number for the array representing an admission goal
 // function should return the index of the array for when the goal was met
