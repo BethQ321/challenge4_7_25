@@ -14,9 +14,16 @@ const target4 = 3000;
 // function also receives a target number for the array representing an admission goal
 // function should return the index of the array for when the goal was met
 // function should return -1 if goal was not met
+
 function targetNumber(arr, target) {
-    // **code your function here**
-    return "test"
+    let accumulator = 0;
+    for(let i = 0; i < arr.length; i++) {
+        accumulator += arr[i];
+        if(accumulator >= target) {
+            return i;
+        }
+    }
+    return -1;
 };
 
 // running test cases

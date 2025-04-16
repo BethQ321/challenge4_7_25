@@ -16,9 +16,29 @@ const arr5 = [12, 2, 5, 9, 3, 8, 13, 18, 6, 1, 4]     // should return [4, 9, 5,
 // the function returns the highlightsOrder array
 
 function findHighlights(arr) {
-    // ** code your function here **
-    return "test";
+    let highlightsOrder = [];
+    for(let i = arr.length; i--; i > 0) {
+        lowestHighlight = findLowestHighlight(arr);
+        highlightsOrder.push(lowestHighlight);
+        lowestIndex = arr.indexOf(lowestHighlight);
+        arr.splice(lowestIndex, 1);
+    }
+    return highlightsOrder;
 };
+
+function findLowestHighlight(arr) {
+    const highlights = [];
+    arr.forEach((num, i) => {
+        if((arr[i] > arr[i-1] || !arr[i-1]) && (arr[i] > arr[i+1] || !arr[i+1])) {
+            highlights.push(arr[i]);
+        };
+    });
+    highlights.sort((a,b) =>{
+        return a - b;
+    });
+    let lowest = highlights[0];
+    return lowest;
+}
 
 // running test cases
 console.log("arr1 should return [5, 6, 4, 3], returns:", findHighlights(arr1));
